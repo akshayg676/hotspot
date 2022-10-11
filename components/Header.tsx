@@ -1,19 +1,16 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../public/logo.png";
-type Props = {};
 
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header className="flex justify-between p-5 max-w-7xl mx-auto">
       <div className="flex items-center space-x-9">
         <Link href="/">
-          <Image
-            className="object-contain cursor-pointer"
-            width="120px"
-            height="100px"
-            src={logo}
+          <img
+            className="w-20 object-contain cursor-pointer"
+            src={logo.src}
+            alt=""
           />
         </Link>
         <div className="hidden md:inline-flex items-center space-x-5">
