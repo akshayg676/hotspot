@@ -4,7 +4,7 @@ import logo from "../public/banner.png";
 
 const Banner = () => {
   return (
-    <div className="flex items-center justify-between text-[#f0f0f0] bg-[#357938] border-y border-black py-10 lg:py-5">
+    <div className="flex items-center justify-between text-[#f0f0f0] bg-gradient-to-r from-[#05386b] to-[#5cdb95] border-y border-black py-10 lg:py-5">
       <div className="px-10 space-y-5">
         <h1 className="text-6xl max-w-xl font-serif">
           <span className="underline decoration-[#f0f0f0] decoration-4">
