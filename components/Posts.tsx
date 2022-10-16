@@ -28,12 +28,12 @@ const Posts = ({ posts }: Props) => {
                   />
                 </div>
 
-                <p className="text-xs">
+                <div className="text-xs">
                   {post.description} by{" "}
                   <span className="underline decoration-[#f0f0f0] decoration-1 font-bold">
                     {post.author.name}
                   </span>
-                </p>
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
+import Footer from "./Footer";
 
 type Props = {
   children: React.ReactNode;
@@ -13,6 +14,9 @@ const Layout = ({ children }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {children}
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
