@@ -39,7 +39,7 @@ const Post = ({ postDetails }: Props) => {
       });
   };
   return (
-    <div>
+    <main>
       <Header />
       <div className="max-w-5xl mx-auto p-5">
         <img
@@ -48,7 +48,6 @@ const Post = ({ postDetails }: Props) => {
           alt=""
         />
       </div>
-
       <article className="max-w-5xl mx-auto p-5">
         <h1 className="text-3xl mt-10 mb-3">{postDetails.title}</h1>
         <h2 className="text-xl font-light text-gray-500 mb-2">
@@ -98,8 +97,8 @@ const Post = ({ postDetails }: Props) => {
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-[#3a8d5f]" />
       {submitted ? (
-        <div className="flex flex-col py-10 my-10 bg-[#3a8d5f] text-white max-w-2xl mx-auto">
-          <h3 className="text-3xl font-bold">
+        <div className="flex flex-col py-10 my-10 px-5 bg-[#3a8d5f] text-white max-w-2xl mx-auto">
+          <h3 className="text-3xl font-bold mb-2">
             Thank you for submitting your comment!
           </h3>
           <p>Once it has been approved, it will appear below</p>
@@ -123,7 +122,7 @@ const Post = ({ postDetails }: Props) => {
             <input
               {...register("name", { required: true })}
               className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-[#5cdb95] outline-none focus:ring "
-              placeholder="John Appleseed"
+              placeholder="Donald Trump"
               type="text"
             />
           </label>
@@ -132,7 +131,7 @@ const Post = ({ postDetails }: Props) => {
             <input
               {...register("email", { required: true })}
               className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-[#5cdb95] outline-none focus:ring "
-              placeholder="John Appleseed"
+              placeholder="you@email.com"
               type="text"
             />
           </label>
@@ -141,7 +140,7 @@ const Post = ({ postDetails }: Props) => {
             <textarea
               {...register("comment", { required: true })}
               className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-[#5cdb95] outline-none focus:ring"
-              placeholder="John Appleseed"
+              placeholder="Enter some comment..."
               rows={8}
             />
           </label>
@@ -167,7 +166,21 @@ const Post = ({ postDetails }: Props) => {
           />
         </form>
       )}
-    </div>
+      {/* Comment */}
+      <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-[#5cdb95] shadow space-y-2">
+        <h3 className="text-4xl">Comments</h3>
+        <hr className="pb-2" />
+        {postDetails.comments.map((comment) => (
+          <div key={comment._id}>
+            <p>
+              <span className="text-[#3a8d5f]">{comment.name} : </span>
+              {comment.comment}
+            </p>
+            <br />
+          </div>
+        ))}
+      </div>
+    </main>
   );
 };
 
